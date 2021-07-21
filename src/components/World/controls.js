@@ -7,8 +7,8 @@ export const createControls = (camera, canvas, type) => {
     controls.enableDamping = true;
     controls.enableZoom = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 10;
-    controls.enabled = false;
+    controls.autoRotateSpeed = 2;
+    controls.enabled = true;
     return controls;
   };
   if(type==="firstPerson"){

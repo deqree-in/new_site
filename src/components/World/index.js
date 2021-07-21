@@ -2,11 +2,10 @@ import * as THREE from 'three';
 import { createScene } from './scene';
 import { createCamera } from './camera';
 import { createRenderer } from './renderer';
-import { Cube } from './Cube';
+import { Sphere } from './Sphere';
 import { createLights } from './lights';
 import { resizer } from './resizer';
 import {Loop} from './Loop';
-// import {createTerrain} from './terrain';
 
 class World {
   constructor(container) {
@@ -17,11 +16,12 @@ class World {
     this._resizer = resizer(container, this._camera, this._renderer);
     this._time = 0.0;
     this._loop = new Loop(this._camera, this._scene, this._renderer);
-    const cube = new Cube(1, 1, 1, 'black');
-    cube.getCube().position.set(4, 0, 0);
-    this._loop._objectsWithBehaviour.push(cube);
+    // const globe = new Sphere(3.5, 'black');
+    const globe = new Sphere(3.5, 'black', this._time);
+    // this._loop._needsUpdate.push(globe.getSphere());
+    globe.getSphere().position.set(0, 0, 0);
     const {light, aLight} = createLights();
-    this._scene.add(cube.getCube(), light, aLight);
+    this._scene.add(globe.getSphere(), light, aLight);
     this._clock = new THREE.Clock();
   }
 
