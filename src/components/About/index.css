@@ -1,0 +1,38 @@
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid green; */
+  width: 71vw;
+  align-self: center;
+  margin-top: 20vh;
+}
+
+.about-head {
+  font-family: "Baloo Chettan 2", cursive;
+  color: white;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.about-desc {
+  padding-top: 32px;
+}
+
+@media (max-width: 640px) {
+  .about-wrapper {
+    margin-top: 0;
+  }
+  .about-head {
+    font-family: "Baloo Chettan 2", cursive;
+    color: white;
+    font-weight: 900;
+    font-size: 10vw;
+    text-align: center;
+  }
+
+  .about-desc {
+    padding-top: 32px;
+    text-align: center;
+    font-size: 4vw;
+  }
+}

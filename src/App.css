@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: #1c2027;
 }
 /* 
 #root {
@@ -19,3 +19,8 @@ body {
   align-items: center;
   font-family: sans-serif;
 } */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,159 @@
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid #ff0000; */
+  margin-top: 25vh;
+  padding: 10px;
+  justify-content: space-around;
+  font-family: "Baloo Chettan 2", cursive;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid green; */
+  width: 20vw;
+}
+
+.detail-head,
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-title {
+  font-weight: 900;
+  font-size: calc(30px + 0.8vw);
+  color: white;
+}
+
+.detail {
+  font-size: calc(28px - 0.4vw);
+  padding-top: 32px;
+  padding-left: 5px;
+}
+
+.number,
+.email,
+.address {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 16px;
+  font-size: calc(10px + 0.5vw);
+  margin-bottom: 2vh;
+}
+
+.email {
+  font-size: calc(10px + 0.4vw);
+}
+
+.number:hover,
+.email:hover,
+.address:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+}
+
+.fa-phone,
+.fa-envelope,
+.fa-map-marker {
+  padding-right: 2vmin;
+  padding-left: 1vmin;
+  color: #0270d7;
+}
+
+.fab.h {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+
+  border-radius: 50%;
+
+  /* width: 100%; */
+  /* text-align: center; */
+
+  display: inline-block;
+  padding: 16px;
+  font-size: calc(10px + 0.5vw);
+  /* margin-right: 3vw; */
+}
+
+.fab.h:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+  color: #0270d7;
+}
+
+.handles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#contactus {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  min-width: 25vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#contactus input {
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+
+#message {
+  padding: 16px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+.btn-msg {
+  width: 10vw;
+  align-self: flex-end;
+  margin-top: 16px;
+  border-radius: 5px;
+}
+
+@media (max-width: 640px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #ff0000; */
+    margin-top: 25vh;
+    padding: 10px;
+    justify-content: space-around;
+    font-family: "Baloo Chettan 2", cursive;
+    padding: 8vw;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid green; */
+    width: auto;
+  }
+
+  .detail {
+    font-size: 5vw;
+    padding-top: 32px;
+    padding-left: 5px;
+    padding-bottom: 5vh;
+  }
+  .contacts {
+    margin-bottom: 4vh;
+  }
+  .btn-msg {
+    width: auto;
+    align-self: center;
+    margin-top: 16px;
+    border-radius: 5px;
+  }
+}

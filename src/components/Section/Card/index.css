@@ -1,0 +1,72 @@
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid green; */
+  padding: 16px;
+  /* min-width: 10vw; */
+  max-width: 32%;
+  /* flex-grow: 1; */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  height: 25vh;
+  /* overflow: auto; */
+}
+
+.wrapper-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+}
+
+.title-card {
+  color: white;
+  font-family: "Baloo Chettan 2", cursive;
+  font-size: calc(10px + 0.6vw);
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding-right: 10px;
+  color: #189bdf;
+}
+
+.desc {
+  color: grey;
+  font-size: calc(5px + 0.6vw);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .wrapper-card {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    padding: 16px;
+    /* min-width: 10vw; */
+    min-width: 100%;
+    /* flex-grow: 1; */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    height: 25vh;
+    /* overflow: auto; */
+  }
+  .title-card {
+    color: white;
+    font-family: "Baloo Chettan 2", cursive;
+    font-size: 4vw;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .desc {
+    color: grey;
+    font-size: 3vw;
+    font-weight: 400;
+  }
+}

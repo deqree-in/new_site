@@ -1,0 +1,102 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid green; */
+  padding: 10px;
+  margin-left: 10vw;
+  max-width: 80vw;
+  /* margin-top: -24vh; */
+  height: 80vh;
+  margin-bottom: 20vh;
+}
+
+.heading {
+  display: flex;
+  font-family: "Baloo Chettan 2", cursive;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  /* border: 1px solid palevioletred; */
+  height: 70vh;
+  padding-top: 0vh;
+  margin-top: 40px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 50px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  /* text-align: left; */
+  /* width: 40%; */
+}
+
+.subtitle {
+  font-size: calc(30px - 0.4vw);
+  /* width: 60%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.title,
+.subtitle {
+  text-align: left;
+  padding: 20px;
+}
+/* 
+.title,
+.subtitle,
+.points {
+  border: 1px solid blue;
+} */
+
+@media (max-width: 640px) {
+  .wrapper {
+    margin-top: 40vh;
+  }
+  .points {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid palevioletred; */
+    width: 100%;
+    /* height: 70vh; */
+    /* padding-top: 0vh; */
+    /* margin-top: 40px; */
+    /* padding-bottom: 100vh; */
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 10vmin;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    /* width: 40%; */
+    /* border: 1px solid firebrick; */
+  }
+  .subtitle {
+    font-size: calc(20px - 0.4vw);
+    /* width: 60%; */
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: flex-start;
+  }
+}

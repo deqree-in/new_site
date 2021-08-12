@@ -1,0 +1,85 @@
+.phone-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid salmon; */
+  justify-content: center;
+  transform: scale(0.75);
+  margin-top: -5vh;
+  height: 90vh;
+  /* width: auto; */
+  /* overflow-x: scroll; */
+}
+
+.head {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: "Baloo Chettan 2", cursive;
+  padding-bottom: 5vh;
+}
+
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* flex: 2; */
+  /* border: 1px solid firebrick; */
+  width: 35vw;
+}
+
+.col1,
+.col2 {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+/* 
+.col1 {
+  padding-right: 40px;
+}
+
+.col2 {
+  padding-left: 40px;
+} */
+
+@media (max-width: 1244px) {
+  .phone-wrapper {
+    transform: scale(0.67);
+  }
+}
+
+@media (max-width: 640px) {
+  .phone-wrapper {
+    /* border: 1px solid magenta; */
+    margin-top: 400px;
+    height: auto;
+  }
+  .col1 {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+  .head {
+    text-align: center;
+    font-size: 10vmin;
+    font-weight: bold;
+    color: white;
+    font-family: "Baloo Chettan 2", cursive;
+    padding-bottom: 5vh;
+  }
+}

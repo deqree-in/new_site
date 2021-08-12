@@ -1,0 +1,130 @@
+@import url("https://rsms.me/inter/inter-ui.css");
+::selection {
+  background: #2d2f36;
+}
+::-webkit-selection {
+  background: #2d2f36;
+}
+::-moz-selection {
+  background: #2d2f36;
+}
+.page-login {
+  background-color: #1c2027;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  place-content: center;
+  width: 100vw;
+}
+@media (max-width: 767px) {
+  .page-login {
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+.container-login {
+  display: flex;
+  height: 320px;
+  margin: 0 auto;
+  width: 640px;
+}
+@media (max-width: 767px) {
+  .container-login {
+    flex-direction: column;
+    height: 630px;
+    width: 320px;
+  }
+}
+.left-login {
+  background-color: #323946ee;
+  height: calc(100% - 40px);
+  top: 20px;
+  color: white;
+  font-family: "Baloo Chettan 2", cursive;
+  position: relative;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+@media (max-width: 767px) {
+  .left-login {
+    height: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    max-height: 270px;
+  }
+}
+.login-login {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+.eula-login {
+  /* color: #999; */
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
+}
+.right-login {
+  background-color: #1c2027;
+  box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+  color: #f1f1f2;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .right-login {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+}
+.svg-login {
+  position: absolute;
+  width: 320px;
+}
+.path-login {
+  fill: none;
+  stroke: url(#linearGradient-login);
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+.form-login {
+  margin: 40px;
+  position: absolute;
+}
+.label-login {
+  color: #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.input-login {
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+.input-login::-moz-focus-inner {
+  border: 0;
+}
+#submit-login {
+  color: #707075;
+  margin-top: 40px;
+  transition: color 300ms;
+}
+#submit-login:focus {
+  color: #f2f2f2;
+}
+#submit-login:active {
+  color: #d0d0d2;
+}

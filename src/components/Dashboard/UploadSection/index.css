@@ -1,0 +1,92 @@
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #262a33;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  /* height: 100px; */
+  margin-top: 3vh;
+  width: 97.5%;
+}
+
+#upload-field {
+  /* display: none; */
+  background: transparent;
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#upload-field::-webkit-file-upload-button {
+  background: transparent;
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: gray;
+  font-weight: bold;
+  content: "Drag files or click here to upload";
+}
+
+#upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-label {
+  width: 95%;
+  height: 50vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6) inset;
+  background-color: #22262e;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-family: "Baloo Chettan 2", cursive;
+}
+
+.fa-cloud-upload-alt {
+  font-size: 10vmin;
+  color: grey;
+}
+
+.upload-label:hover {
+  box-shadow: 0 4px 30px 2px rgba(0, 0, 0, 0.6) inset;
+  background-color: #22262e;
+}
+
+.upload-title {
+  font-size: 40px;
+  margin-top: -3vh;
+  font-family: "Baloo Chettan 2", cursive;
+  /* font-weight: bold; */
+  padding-left: 5vmin;
+  color: white;
+}
+
+.staged-files {
+  max-width: 95%;
+  max-height: 80px;
+  font-size: 10px;
+  /* height: 50vh; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6) inset;
+  background-color: #22262e;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-family: monospace;
+}
+
+.sub-btn {
+  font-size: calc(12px + 0.5vw);
+  margin-top: 5vh;
+}
