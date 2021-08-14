@@ -1,13 +1,50 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import axios from "axios";
 import anime from "animejs/lib/anime.es.js";
 import { Dialog } from "@material-ui/core";
 import { useMediaQuery } from "react-responsive";
+import { makeStyles } from "@material-ui/core/styles";
+import Alert from "@material-ui/lab/Alert";
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 import "./index.css";
 
+const iframeStyles = makeStyles({
+  paper: {
+    height: "80vh",
+  },
+});
+
+const veriStyles = makeStyles({
+  paper: {
+    // width: "20vw",
+    // height: "20vh",
+    background: "transparent",
+    border: "none",
+    boxShadow: "none",
+    wordWrap: "break-word",
+    // padding: "20px",
+  },
+});
+
+const spinnerStyle = makeStyles({
+  colorPrimary: {
+    color: "#0270D7",
+  },
+});
+
 const Hero = () => {
+  const iframeClasses = iframeStyles();
+  const veriClasses = veriStyles();
+  const spinnerClasses = spinnerStyle();
   const [modal, setModal] = React.useState(false);
+  const [player, setPlayer] = React.useState(false);
+  const [status, setStatus] = React.useState("info");
   const [feedback, setFeedback] = React.useState("verifying...");
+  const [link, setLink] = React.useState("");
+  // const playButtonref = React.useRef(null);
 
   React.useEffect(() => {
     var fullAnimation = (function () {
@@ -96,6 +133,21 @@ const Hero = () => {
     window.onload = function () {
       fullAnimation.init();
     };
+
+    // let button = playButtonref.current;
+
+    // addClass(button, "active");
+    // // setTimeout(() => {
+    // // removeClass(button, "active");
+    // // }, 2500);
+
+    // function addClass(el, className) {
+    //   el.className += ` ${className}`;
+    // }
+
+    // function removeClass(el, className) {
+    // el.className = el.className.replace(className, "");
+    // }
   }, []);
 
   const fileUploader = React.useRef();
@@ -105,8 +157,24 @@ const Hero = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(fileUploader.current);
-    axios.post("https://deqree.in/verifier", formData).then((response) => {
-      setFeedback(JSON.stringify(response.data));
+    axios.post("https://deqree.in/api/verifier", formData).then((response) => {
+      console.log(response.data);
+      if (response.data === "False") {
+        setFeedback(
+          "Some error occured. Please try a different file or try again after sometime"
+        );
+        setStatus("error");
+      }
+      if (response.data.True) {
+        const text = `
+          Your File has been verified successfully.\n
+        `;
+        setStatus("success");
+        setFeedback(text);
+        setLink(
+          `https://explorer.cardano-testnet.iohkdev.io/en/transaction?id=${response.data.True}`
+        );
+      }
     });
   };
 
@@ -148,22 +216,66 @@ const Hero = () => {
                       />
                       Verify Certificate
                     </label>
-                    {/* <button
-                      className="button button-primary"
-                      type="submit"
-                      onClick={() => setModal(!modal)}
-                    >
-                      Verify
-                    </button> */}
                   </form>
                 </div>
               </div>
               <div
                 className="hero-figure anime-element"
-                style={{ marginTop: isMobile ? 0 : "10vh" }}
+                style={{
+                  marginTop: isMobile ? 0 : "10vh",
+                  position: "relative",
+                  // border: "1px solid green",
+                }}
               >
+                {/* <div className="container-playB">
+                  <a
+                    ref={playButtonref}
+                    className="button button-play"
+                    onClick={() => setPlayer(!player)}
+                  >
+                    <svg
+                      className="circle-playB"
+                      viewBox="0 0 120 120"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="60"
+                        cy="60"
+                        r="56"
+                        strokeWidth="8"
+                        stroke="#fff"
+                        fill="transparent"
+                      ></circle>
+                    </svg>
+                  </a>
+                </div> */}
+                <div className="container-playB">
+                  <a
+                    className="button-playB is-play"
+                    onClick={() => setPlayer(!player)}
+                  >
+                    <div className="button-outer-circle has-scale-animation"></div>
+                    <div className="button-outer-circle has-scale-animation has-delay-short"></div>
+                    <div className="button-icon is-play">
+                      <svg height="100%" width="100%" fill="#0270D7">
+                        <polygon
+                          className="triangle-playB"
+                          points="5,0 30,15 5,30"
+                          viewBox="0 0 30 15"
+                        ></polygon>
+                        <path
+                          className="path-playB"
+                          d="M5,0 L30,15 L5,30z"
+                          fill="none"
+                          stroke="#0270D7"
+                          strokeWidth="1"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
                 <svg
-                  className="placeholder"
+                  className="placeholder-playB"
                   width="528"
                   height="396"
                   viewBox="0 0 528 396"
@@ -211,22 +323,54 @@ const Hero = () => {
         </section>
       </main>
       <Dialog
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
         open={modal}
-        onClose={() => setModal(!modal)}
+        classes={{ paper: veriClasses.paper }}
+        onClose={() => {
+          setModal(!modal);
+          setFeedback("verifying...");
+          setStatus("info");
+        }}
       >
-        <span
+        {feedback === "verifying..." ? (
+          <CircularProgress
+            size={70}
+            classes={{ colorPrimary: spinnerClasses.colorPrimary }}
+          />
+        ) : (
+          <Alert
+            style={{ wordWrap: "break-word", width: "100%", height: "100%" }}
+            severity={status}
+            style={{
+              wordBreak: "break-word",
+            }}
+          >
+            {feedback}
+            {link !== "" && (
+              <a target="_blank" href={link}>
+                Check on Blockchain
+              </a>
+            )}
+          </Alert>
+        )}
+      </Dialog>
+      <Dialog
+        fullWidth
+        maxWidth="xl"
+        classes={{ paper: iframeClasses.paper }}
+        open={player}
+        onClose={() => setPlayer(!player)}
+      >
+        <iframe
           style={{
-            padding: "16px",
-            backgroundColor: "#1c2027",
-            color: "white",
-            borderRadius: "0px",
-            wordWrap: "break-word",
+            width: "100%",
+            height: "100%",
           }}
-        >
-          {feedback}
-        </span>
+          src="https://www.youtube.com/embed/3d6DsjIBzJ4"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </Dialog>
     </div>
   );

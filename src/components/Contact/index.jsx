@@ -35,18 +35,29 @@ const Contact = () => {
         {!isPhone && (
           <span className="handles">
             <i className="fab h fa-facebook-f" />
-            <i className="fab h fa-twitter" />
+            <i
+              className="fab h fa-twitter"
+              onClick={() => {
+                window.location.href = "https://twitter.com/deqree";
+              }}
+            />
             <i className="fab h fa-instagram" />
           </span>
         )}
       </div>
-      <form id="contactus">
+      <form
+        action="https://formspree.io/f/mvodvzgj"
+        method="post"
+        id="contactus"
+      >
         {/* <TextField className="button" variant="outlined" label="Your Name" />
         <TextField variant="outlined" label="Email" />
         <TextField variant="outlined" label="Domain of work" /> */}
         <input
           className="button"
           type="text"
+          name="name"
+          id="name"
           placeholder="Your Name"
           style={{
             textAlign: "left",
@@ -54,7 +65,9 @@ const Contact = () => {
         />
         <input
           className="button"
-          type="text"
+          type="email"
+          name="email"
+          id="email"
           placeholder="Email"
           style={{
             textAlign: "left",
@@ -63,6 +76,8 @@ const Contact = () => {
         <input
           className="button"
           type="text"
+          name="domain_of_work"
+          id="domain_of_work"
           placeholder="Domain of Work"
           style={{
             textAlign: "left",
@@ -75,9 +90,9 @@ const Contact = () => {
           rows="10"
           placeholder="Message"
         ></textarea>
-        <a className="button button-primary btn-msg" href="/">
+        <button type="submit" className="button button-primary btn-msg">
           Send Message
-        </a>
+        </button>
       </form>
     </div>
   );

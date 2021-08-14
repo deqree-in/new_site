@@ -1,20 +1,34 @@
 .navlinks {
-  font-family: "Baloo Chettan 2", cursive;
+  /* font-family: "Baloo Chettan 2", cursive; */
+  /* font-family: "Nunito", sans-serif; */
+  font-family: "Work Sans", sans-serif;
   padding-right: 2vw;
   text-decoration: none;
   font-size: 18px;
 }
 
+.navlinks:hover {
+  color: "grey" !important;
+}
+
 .header-phn {
   /* border: 1px solid hotpink; */
-  /* width: 93vw; */
+  width: 70vw;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+}
+
+.navs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-logo-image {
   justify-self: center;
+  width: 300px;
   /* border: 1px solid black; */
 }
 
@@ -27,7 +41,7 @@
 
 @media (max-width: 640px) {
   .navlinks {
-    border: 1px solid firebrick;
+    /* border: 1px solid firebrick; */
     padding-right: 0.3vmin;
   }
   .header-phn {

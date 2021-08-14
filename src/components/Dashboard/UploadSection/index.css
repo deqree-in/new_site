@@ -8,7 +8,7 @@
   border-radius: 5px; /* 5px rounded corners */
   /* height: 100px; */
   margin-top: 3vh;
-  width: 97.5%;
+  width: 93.5vw;
 }
 
 #upload-field {
@@ -63,11 +63,16 @@
 
 .upload-title {
   font-size: 40px;
-  margin-top: -3vh;
+  /* margin-top: -3vh; */
   font-family: "Baloo Chettan 2", cursive;
   /* font-weight: bold; */
   padding-left: 5vmin;
   color: white;
+}
+
+.desc-dash {
+  padding-left: 5vmin;
+  font-size: calc(12px + 0.7vw);
 }
 
 .staged-files {

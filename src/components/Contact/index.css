@@ -5,7 +5,8 @@
   margin-top: 25vh;
   padding: 10px;
   justify-content: space-around;
-  font-family: "Baloo Chettan 2", cursive;
+  /* font-family: "Baloo Chettan 2", cursive; */
+  font-family: "Work Sans", sans-serif;
 }
 
 .text {
@@ -75,6 +76,7 @@
   display: inline-block;
   padding: 16px;
   font-size: calc(10px + 0.5vw);
+  cursor: pointer;
   /* margin-right: 3vw; */
 }
 

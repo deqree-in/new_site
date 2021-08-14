@@ -15,7 +15,8 @@
   font-size: 50px;
   font-weight: bold;
   color: white;
-  font-family: "Baloo Chettan 2", cursive;
+  /* font-family: "Baloo Chettan 2", cursive; */
+  font-family: "Work Sans", sans-serif;
   padding-bottom: 5vh;
 }
 

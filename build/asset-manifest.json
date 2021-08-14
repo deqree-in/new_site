@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dq/static/css/main.ff55d897.chunk.css",
+    "main.js": "/dq/static/js/main.378977b7.chunk.js",
+    "main.js.map": "/dq/static/js/main.378977b7.chunk.js.map",
+    "runtime-main.js": "/dq/static/js/runtime-main.cf2e9fd3.js",
+    "runtime-main.js.map": "/dq/static/js/runtime-main.cf2e9fd3.js.map",
+    "static/js/2.15fa60e6.chunk.js": "/dq/static/js/2.15fa60e6.chunk.js",
+    "static/js/2.15fa60e6.chunk.js.map": "/dq/static/js/2.15fa60e6.chunk.js.map",
+    "index.html": "/dq/index.html",
+    "static/css/main.ff55d897.chunk.css.map": "/dq/static/css/main.ff55d897.chunk.css.map",
+    "static/js/2.15fa60e6.chunk.js.LICENSE.txt": "/dq/static/js/2.15fa60e6.chunk.js.LICENSE.txt",
+    "static/media/phone2.dda7ca8d.svg": "/dq/static/media/phone2.dda7ca8d.svg",
+    "static/media/whiteLogo.ee7b987d.png": "/dq/static/media/whiteLogo.ee7b987d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf2e9fd3.js",
+    "static/js/2.15fa60e6.chunk.js",
+    "static/css/main.ff55d897.chunk.css",
+    "static/js/main.378977b7.chunk.js"
+  ]
+}

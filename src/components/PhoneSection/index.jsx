@@ -30,7 +30,7 @@ const PhoneSection = () => {
               align={isPhone ? "left" : "right"}
               icon={<i className="fab fa-bitcoin"></i>}
               title={item}
-              desc="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+              // desc="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
             />
           ))}
         </div>
@@ -55,7 +55,7 @@ const PhoneSection = () => {
                 key={ndx}
                 icon={<i className="fab fa-bitcoin"></i>}
                 title={item}
-                desc="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+                // desc="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
               />
             ))}
           </div>
